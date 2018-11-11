@@ -1,5 +1,6 @@
 -- console: mysql -u root -p
 -- show databases; // use 'db';
+-- docker exec -it mysql-instance mysql -uroot -p
 
 create table teams(
 	id_team int primary key auto_increment,
@@ -30,7 +31,7 @@ create table matches(
 	id_home_team int,
 	id_competition int,
 	instance varchar(100),
-	date datetime,
+	match_date datetime,
 	home_team_goals int,
 	visiting_team_goals int,
 	foreign key (id_home_team) references teams(id_team),
@@ -46,14 +47,14 @@ insert into competitions (competition_name) values ('Torneo Local');
 insert into competitions (competition_name) values ('Copa Sudamericana');
 insert into competitions (competition_name) values ('Copa Argentina');
 
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 2, 'date 10', '2017-06-30 17:30:00');
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 2, 'date 11', '2017-07-30 19:30:00');
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 2, 'Fecha 10', '2017-06-30 17:30:00');
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 2, 'Fecha 11', '2017-07-30 19:30:00');
 
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 1, '8vos', '2017-07-30 19:30:00');
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 1, '8vos', (select curdate()));
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 1, '8vos', '2017-07-30 19:30:00');
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 1, '8vos', (select curdate()));
 
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 3, '8vos', '2017-07-30 19:30:00');
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 3, '8vos', (select curdate()));	
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 3, '8vos', '2017-07-30 19:30:00');
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 3, '8vos', (select curdate()));	
 
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 4, '8vos', '2017-07-30 19:30:00');
-insert into matches (id_visiting_team, id_home_team, id_competition, instance, date) values (1, 2, 4, '8vos', (select curdate()));	
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 4, '8vos', '2017-07-30 19:30:00');
+insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 4, '8vos', (select curdate()));	
