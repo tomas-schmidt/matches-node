@@ -46,7 +46,7 @@ app.get('/', function(req, res) {
 
 app.get('/libertadores', function(req, res ){
   console.log('GET /libertadores');
-  var promise = obtenerPartidos('Copa Libertadores');
+  var promise = getMaches('Copa Libertadores');
 	promise.then(function(data){
 		res.send(data);
 	});
