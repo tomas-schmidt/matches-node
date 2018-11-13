@@ -15,12 +15,11 @@ connection.connect();
 let baseQuery = "select h.team_name as 'home', v.team_name as 'visiting', match_date from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where c.competition_name = "
 
 function getMatches(competition){
-	var deferred = $q.defer();
-	var matches = [];
-	var matchesQuery = queryBase + "'" + competencia + "'";
+	let deferred = $q.defer();
+	let matches = [];
+	let matchesQuery = queryBase + "'" + competencia + "'";
 	connection.query(matchesQuery, function(err, rows, fields) {
 		if(err) console.log(err);
-
 		if (rows) {
 			for (i=0; i < rows.length; i++) {
 				matches.push({
@@ -41,12 +40,15 @@ function getMatches(competition){
 
 app.get('/', function(req, res) {
   console.log('GET /');
-  res.send('home');
+  var promise = getMatches('*');
+	promise.then(function(data){
+		res.send(data);
+	});
 });
 
 app.get('/libertadores', function(req, res ){
   console.log('GET /libertadores');
-  var promise = getMaches('Copa Libertadores');
+  var promise = getMatches('Copa Libertadores');
 	promise.then(function(data){
 		res.send(data);
 	});
@@ -54,17 +56,26 @@ app.get('/libertadores', function(req, res ){
 
 app.get('/sudamericana', function(req, res ){
   console.log('GET /sudamericana');
-  res.send('sudamericana');
+  var promise = getMatches('Sudamericana');
+	promise.then(function(data){
+		res.send(data);
+	});
 });
 
 app.get('/superliga', function(req, res ){
   console.log('GET /superliga');
-  res.send('superliga');
+  var promise = getMatches('Superliga');
+	promise.then(function(data){
+		res.send(data);
+	});
 });
 
 app.get('/argentina', function(req, res ){
   console.log('GET /argentina');
-  res.send('argentina');
+  var promise = getMatches('Argentina');
+	promise.then(function(data){
+		res.send(data);
+	});
 });
 
 app.listen(port, function(){
