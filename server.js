@@ -17,7 +17,7 @@ let baseQuery = "select h.team_name as 'home', v.team_name as 'visiting', match_
 function getMatches(competition){
 	let deferred = $q.defer();
 	let matches = [];
-	let matchesQuery = queryBase + "'" + competencia + "'";
+	let matchesQuery = baseQuery + "'" + competition + "'";
 	connection.query(matchesQuery, function(err, rows, fields) {
 		if(err) console.log(err);
 		if (rows) {
