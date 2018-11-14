@@ -44,7 +44,7 @@ insert into teams (team_name) values ('River');
 insert into teams (team_name) values ('Boca');
  
 insert into competitions (competition_name) values ('Copa Libertadores');
-insert into competitions (competition_name) values ('Torneo Local');
+insert into competitions (competition_name) values ('Superliga');
 insert into competitions (competition_name) values ('Copa Sudamericana');
 insert into competitions (competition_name) values ('Copa Argentina');
 
