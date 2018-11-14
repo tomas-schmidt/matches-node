@@ -6,7 +6,7 @@ let database = new Database(Environment.databaseConfig);
 let baseQuery = "select h.team_name as 'home', v.team_name as 'visiting', match_date from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where c.competition_name = ";
 let todayQuery = "select h.team_name as 'home', v.team_name as 'visiting', match_date, competition_name from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where match_date = (select CURDATE())"
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', Environment.frontEndUrl);
   next();
 });
