@@ -1,18 +1,8 @@
+const Database = require('./database/database.js');
 let express = require('express'),
   app = express(),
   port = process.env.PORT || 8080;
-
-let mysql = require('mysql');
-
-let connection = mysql.createConnection({
-  host: '127.0.0.1',
-  port: 3306,
-	user: 'root',
-  password: 'pass',
-  database: 'db'
-});
-connection.connect();
-
+let database = new Database({ host: '127.0.0.1', port: 3306, user: 'root', password: 'pass', database: 'db' });
 let baseQuery = "select h.team_name as 'home', v.team_name as 'visiting', match_date from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where c.competition_name = ";
 
 function getMatches(competition) {
@@ -69,7 +59,7 @@ app.get('/argentina', (req, res) => {
 });
 
 app.get('/competitions', (req, res) => {
-  res.send('competitions test response')
+  database.query( 'SELECT * FROM competitions' ).then( rows => { res.send(rows) });
 });
 
 app.listen(port, () => {
