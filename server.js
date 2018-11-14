@@ -1,11 +1,12 @@
-var express = require('express'),
+let express = require('express'),
   app = express(),
   port = process.env.PORT || 8080;
 
-var mysql = require('mysql');
+let mysql = require('mysql');
 
-var connection = mysql.createConnection({
-	host: 'localhost',
+let connection = mysql.createConnection({
+  host: '127.0.0.1',
+  port: 3306,
 	user: 'root',
   password: 'pass',
   database: 'db'
@@ -37,7 +38,6 @@ function getMatches(competition) {
 	return deferred.promise;
 }
 
-
 app.get('/', (req, res) => {
   console.log('GET /');
   let promise = getMatches('*');
@@ -66,6 +66,10 @@ app.get('/argentina', (req, res) => {
   console.log('GET /argentina');
   let promise = getMatches('Argentina');
 	promise.then(data => { res.send(data); });
+});
+
+app.get('/competitions', (req, res) => {
+  res.send('competitions test response')
 });
 
 app.listen(port, () => {

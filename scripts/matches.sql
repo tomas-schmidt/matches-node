@@ -1,6 +1,7 @@
--- console: mysql -u root -p
--- show databases; // use 'db';
+-- docker run --name mysql-instance -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass -e MYSQL_ROOT_HOST=% -d mysql/mysql-server:5.6
 -- docker exec -it mysql-instance mysql -uroot -p
+-- console: mysql -h 127.0.0.1 -u root -p
+-- show databases; // use 'db';
 
 create table teams(
 	id_team int primary key auto_increment,
