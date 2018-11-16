@@ -3,8 +3,8 @@ const Environment = require('./environments/environment.js');
 let express = require('express'), app = express(), port = Environment.port;
 
 let database = new Database(Environment.databaseConfig);
-let baseQuery = "select h.team_name as 'home', v.team_name as 'visiting', match_date from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where c.competition_name = ";
-let todayQuery = "select h.team_name as 'home', v.team_name as 'visiting', match_date, competition_name from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where match_date = (select CURDATE())"
+let baseQuery = "select h.team_name as 'homeTeam', v.team_name as 'visitingTeam', TIME_FORMAT(match_date," + '"%H:%i"' + ") as 'time', DATE_FORMAT(match_date," + '"%d/%m"' + ") as 'day' from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where c.competition_name = ";
+let todayQuery = "select h.team_name as 'homeTeam', v.team_name as 'visitingTeam', TIME_FORMAT(match_date," + '"%H:%i"' + ") as 'time', DATE_FORMAT(match_date," + '"%d/%m"' + ") as 'day', competition_name from matches m join teams h on (h.id_team = m.id_home_team) join teams v on (v.id_team = m.id_visiting_team) join competitions c on (m.id_competition = c.id_competition) where match_date = (select CURDATE())"
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', Environment.frontEndUrl);
