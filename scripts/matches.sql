@@ -3,7 +3,7 @@
 -- console: mysql -h 127.0.0.1 -u root -p
 -- show databases; // use 'db';
 
-create table teams(
+create table teams (
 	id_team int primary key auto_increment,
 	team_name varchar(100),
 	team_logo varchar(200)
@@ -14,7 +14,7 @@ create table competitions(
 	competition_name varchar(100)
 );
 
-create table team_competitions(
+create table team_competitions (
 	id_competition int,
 	id_team int,
 	goals int,
@@ -27,7 +27,7 @@ create table team_competitions(
 	primary key (id_competition, id_team)
 );
 
-create table matches(
+create table matches (
 	id_match int primary key auto_increment,
 	id_visiting_team int,
 	id_home_team int,
