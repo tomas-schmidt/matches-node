@@ -1,11 +1,11 @@
 const Database = require('./database/database.js');
-const Environment = require('./environments/environment.js');
+const environment = require('./environments/environment.js');
 let queries = require('./database/queries.js');
-let database = new Database(Environment.databaseConfig);
-let express = require('express'), app = express(), port = Environment.port;
+let database = new Database(environment.databaseConfig);
+let express = require('express'), app = express(), port = environment.port;
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', Environment.frontEndUrl);
+  res.setHeader('Access-Control-Allow-Origin', environment.frontEndUrl);
   next();
 });
 
