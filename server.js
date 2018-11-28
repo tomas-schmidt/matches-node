@@ -33,6 +33,10 @@ app.get('/competitions', (req, res) => {
   database.query(queries.competitions).then(rows => { res.send(rows) });
 });
 
+app.get('/positions/:comp', (req, res) => {
+  res.send(req.params.comp);
+});
+
 app.listen(port, () => {
   console.log("Listening on port 8080");
 });
