@@ -13,12 +13,12 @@ app.get('/', (req, res) => {
   database.query(queries.today).then( rows => { res.send(rows) });
 });
 
-app.get('/matches/:idComp', (req, res) => {
-  database.query(`${queries.base}${req.params.idComp}`).then(rows => { res.send(rows) });
+app.get('/matches/:codComp', (req, res) => {
+  database.query(`${queries.base}'${req.params.codComp}'`).then(rows => { res.send(rows) });
 });
 
-app.get('/positions/:idComp', (req, res) => {
-  res.send(req.params.idComp);
+app.get('/positions/:codComp', (req, res) => {
+  res.send(req.params.codComp);
 });
 
 app.listen(port, () => {
