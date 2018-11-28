@@ -45,10 +45,10 @@ create table matches (
 insert into teams (team_name, team_logo) values ('River', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 insert into teams (team_name, team_logo) values ('Boca', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
  
-insert into competitions (competition_name) values ('Copa Libertadores', 'COPA_LIB');
-insert into competitions (competition_name) values ('Superliga', 'SUPERLIGA');
-insert into competitions (competition_name) values ('Copa Sudamericana','COPA_SUD');
-insert into competitions (competition_name) values ('Copa Argentina', 'COPA_ARG');
+insert into competitions (competition_name, competition_code) values ('Copa Libertadores', 'COPA_LIB');
+insert into competitions (competition_name, competition_code) values ('Superliga', 'SUPERLIGA');
+insert into competitions (competition_name, competition_code) values ('Copa Sudamericana','COPA_SUD');
+insert into competitions (competition_name, competition_code) values ('Copa Argentina', 'COPA_ARG');
 
 insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 2, 'Fecha 10', '2017-06-30 17:30:00');
 insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 2, 'Fecha 11', '2017-07-30 19:30:00');
