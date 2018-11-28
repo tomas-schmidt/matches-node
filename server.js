@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/matches/:idComp', (req, res) => {
-  database.query(`${queries.base}'${req.params.idComp}'`).then(rows => { res.send(rows) });
+  database.query(`${queries.base}${req.params.idComp}`).then(rows => { res.send(rows) });
 });
 
 app.get('/positions/:idComp', (req, res) => {
