@@ -13,28 +13,12 @@ app.get('/', (req, res) => {
   database.query(queries.today).then( rows => { res.send(rows) });
 });
 
-app.get('/libertadores', (req, res) => {
-  database.query(`${queries.base}'Copa Libertadores'`).then(rows => { res.send(rows) });
+app.get('/matches/:idComp', (req, res) => {
+  database.query(`${queries.base}${req.params.idComp}`).then(rows => { res.send(rows) });
 });
 
-app.get('/sudamericana', (req, res) => {
-  database.query(`${queries.base}'Copa Sudamericana'`).then(rows => { res.send(rows) });
-});
-
-app.get('/superliga', (req, res) => {
-  database.query(`${queries.base}'Superliga'`).then(rows => { res.send(rows) });
-});
-
-app.get('/argentina', (req, res) => {
-  database.query(`${queries.base}'Copa Argentina'`).then(rows => { res.send(rows) });
-});
-
-app.get('/competitions', (req, res) => {
-  database.query(queries.competitions).then(rows => { res.send(rows) });
-});
-
-app.get('/positions/:comp', (req, res) => {
-  res.send(req.params.comp);
+app.get('/positions/:idComp', (req, res) => {
+  res.send(req.params.idComp);
 });
 
 app.listen(port, () => {
