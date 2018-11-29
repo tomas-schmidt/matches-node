@@ -11,8 +11,7 @@ create table teams (
 
 create table competitions(
 	id_competition int primary key auto_increment,
-	competition_name varchar(100),
-	competition_code varchar(50)
+	competition_name varchar(100)
 );
 
 create table team_competitions (
