@@ -25,6 +25,10 @@ app.get('/competitions', (req, res) => {
   database.query(queries.competitions).then(rows => { res.send(rows) });
 });
 
+app.get('/competition/:idComp', (req, res) => {
+  //TODO
+});
+
 app.listen(port, () => {
   console.log("Listening on port 8080");
 });
