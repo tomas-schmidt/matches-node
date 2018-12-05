@@ -45,6 +45,8 @@ create table matches (
 --TEAMS
 insert into teams (team_name, team_logo) values ('River', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 insert into teams (team_name, team_logo) values ('Boca', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Racing', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Independiente', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 
 --COMPETITIONS
 insert into competitions (competition_name, competition_type) values ('Copa Libertadores', 'inter');
@@ -68,12 +70,21 @@ insert into matches (id_visiting_team, id_home_team, id_competition, instance, m
 --TEAM_COMPETITIONS
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (1, 1, 10, 10, 10, 10, 10)
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (1, 2, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (1, 3, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (1, 4, 10, 10, 10, 10, 10)
+
 
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (2, 1, 10, 10, 10, 10, 10)
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (2, 2, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (2, 4, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (2, 3, 10, 10, 10, 10, 10)
 
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (3, 1, 10, 10, 10, 10, 10)
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (3, 2, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (3, 3, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (3, 4, 10, 10, 10, 10, 10)
 
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (4, 1, 10, 10, 10, 10, 10)
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (4, 2, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (4, 3, 10, 10, 10, 10, 10)
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, instance) values (4, 4, 10, 10, 10, 10, 10)
