@@ -42,6 +42,8 @@ create table matches (
 	foreign key (id_competition) references competitions(id_competition)
 );
 
+/*TESTING INSERTS*/
+
 --TEAMS
 insert into teams (team_name, team_logo) values ('River', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 insert into teams (team_name, team_logo) values ('Boca', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');

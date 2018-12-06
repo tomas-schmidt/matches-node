@@ -29,8 +29,8 @@ app.get('/competitions', (req, res) => {
 app.get('/competition/:idComp', (req, res) => {
   let competition = {};
   async.parallel([
-     pd => { database.query(`${queries.base}${req.params.idComp}`).then(rows => { competition.matches = rows; pd(); });},
-     pd => { database.query(`${queries.table}${req.params.idComp}`).then(rows => { competition.table = rows; pd(); });}
+    pd => { database.query(`${queries.base}${req.params.idComp}`).then(rows => { competition.matches = rows; pd(); });},
+    pd => { database.query(`${queries.table}${req.params.idComp}`).then(rows => { competition.table = rows; pd(); });}
   ], () => { res.send(competition); });
 });
 
