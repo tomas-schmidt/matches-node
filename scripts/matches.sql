@@ -42,6 +42,12 @@ create table matches (
 	foreign key (id_competition) references competitions(id_competition)
 );
 
+create table instances (
+	id_instance int primary key auto_increment,
+	instance_name varchar(50),
+	instance_detail varchar(50)
+)
+
 /* TESTING INSERTS */
 
 -- TEAMS
@@ -55,6 +61,16 @@ insert into competitions (competition_name, competition_type) values ('Copa Libe
 insert into competitions (competition_name, competition_type) values ('Superliga', 'local');
 insert into competitions (competition_name, competition_type) values ('Copa Sudamericana', 'inter');
 insert into competitions (competition_name, competition_type) values ('Copa Argentina', 'local');
+
+-- INSTANCES
+insert into instances (instance_name, instance_detail) values ('Fecha', '10');
+insert into instances (instance_name, instance_detail) values ('Fecha', '11');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'A');
+insert into instances (instance_name, instance_detail) values ('8vos', '1');
+insert into instances (instance_name, instance_detail) values ('4vos', '1');
+insert into instances (instance_name, instance_detail) values ('Semifinal', '1');
+insert into instances (instance_name, instance_detail) values ('Semifinal', '2');
+insert into instances (instance_name, instance_detail) values ('Final', '1');
 
 -- MATCHES
 insert into matches (id_visiting_team, id_home_team, id_competition, instance, match_date) values (1, 2, 2, 'Fecha 10', '2017-06-30 17:30:00');
