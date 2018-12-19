@@ -15,6 +15,12 @@ create table competitions(
 	competition_type varchar(100)
 );
 
+create table instances (
+	id_instance int primary key auto_increment,
+	instance_name varchar(50),
+	instance_detail varchar(50)
+);
+
 create table team_competitions (
 	id_competition int,
 	id_team int,
@@ -27,12 +33,6 @@ create table team_competitions (
 	foreign key (id_team) references teams(id_team),
 	foreign key (id_competition) references competitions(id_competition),
 	primary key (id_competition, id_team)
-);
-
-create table instances (
-	id_instance int primary key auto_increment,
-	instance_name varchar(50),
-	instance_detail varchar(50)
 );
 
 create table matches (
