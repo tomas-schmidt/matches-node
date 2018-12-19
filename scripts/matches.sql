@@ -22,7 +22,8 @@ create table team_competitions (
 	goals_recieved int,
 	matches_played int,
 	points int,
-	instance int,
+	id_instance int,
+	foreign key (id_instance) references instances(id_instance),
 	foreign key (id_team) references teams(id_team),
 	foreign key (id_competition) references competitions(id_competition),
 	primary key (id_competition, id_team)
