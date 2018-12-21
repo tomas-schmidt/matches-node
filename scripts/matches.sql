@@ -12,7 +12,8 @@ create table teams (
 create table competitions(
 	id_competition int primary key auto_increment,
 	competition_name varchar(100),
-	competition_type varchar(100)
+	is_local boolean,
+	has_brackets boolean
 );
 
 create table instances (
@@ -59,10 +60,10 @@ insert into teams (team_name, team_logo) values ('Racing', 'https://cdn.bleacher
 insert into teams (team_name, team_logo) values ('Independiente', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 
 -- COMPETITIONS
-insert into competitions (competition_name, competition_type) values ('Copa Libertadores', 'inter');
-insert into competitions (competition_name, competition_type) values ('Superliga', 'local');
-insert into competitions (competition_name, competition_type) values ('Copa Sudamericana', 'inter');
-insert into competitions (competition_name, competition_type) values ('Copa Argentina', 'local');
+insert into competitions (competition_name, is_local, has_brackets) values ('Copa Libertadores', false, true);
+insert into competitions (competition_name, is_local, has_brackets) values ('Superliga', true, false);
+insert into competitions (competition_name, is_local, has_brackets) values ('Copa Sudamericana', false, true);
+insert into competitions (competition_name, is_local, has_brackets) values ('Copa Argentina', true, true);
 
 -- INSTANCES
 insert into instances (instance_name, instance_detail) values ('Grupos', 'A');
