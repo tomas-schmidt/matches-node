@@ -69,15 +69,15 @@ create table positions_table (
 
 create table brackets (
 	id_competition int,
+	id_instance int,
+	bracket int NOT NULL, -- 1 or 2, 3 final
 	id_team_1 int,
 	id_team_2 int,
-	id_instance int,
-	bracket int, -- 1 or 2
 	foreign key (id_instance) references instances(id_instance),
 	foreign key (id_team_1) references teams(id_team),
 	foreign key (id_team_2) references teams(id_team),
 	foreign key (id_competition) references competitions(id_competition),
-	primary key (id_competition, id_instance)
+	primary key (id_competition, id_instance, bracket)
 );
 
 /******************************************************** TESTING INSERTS ********************************************************************/
@@ -227,34 +227,34 @@ insert into positions_table (id_competition, id_team, goals, goals_recieved, mat
 insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (3, 4, 10, 10, 10, 10, 'D');
 
 -- BRACKETS
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 1, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 2, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 3, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 4, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 5, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 6, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 7, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 8, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 9, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 10, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 11, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 12, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 13, 1);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 14, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 1, 1, 1, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 2, 1, 2, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 3, 1, 3, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 4, 1, 4, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 5, 1, 5, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 6, 1, 6, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 7, 1, 7, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 8, 1, 8, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 9, 1, 9, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 10, 1, 10, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 11, 1, 11, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 12, 1, 12, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 13, 1, 13, 1);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 14, 1, 14, 1);
 
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 1, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 2, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 3, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 4, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 5, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 6, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 7, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 8, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 9, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 10, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 11, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 12, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 13, 2);
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 14, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 1, 2, 1, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 2, 2, 2, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 3, 2, 3, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 4, 2, 4, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 5, 2, 5, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 6, 2, 6, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 7, 2, 7, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 8, 2, 8, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 9, 2, 9, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 10, 2, 10, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 11, 2, 11, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 12, 2, 12, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 13, 2, 13, 2);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 14, 2, 14, 2);
 
-insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 15, null);
+insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 15, 3, 15, 2);
