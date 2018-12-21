@@ -30,10 +30,11 @@ create table team_competitions (
 	matches_played int,
 	points int,
 	id_instance int,
+	bracket int,
 	foreign key (id_instance) references instances(id_instance),
 	foreign key (id_team) references teams(id_team),
 	foreign key (id_competition) references competitions(id_competition),
-	primary key (id_competition, id_team)
+	primary key (id_competition, id_team, id_instance)
 );
 
 create table matches (
@@ -133,22 +134,22 @@ insert into matches (id_visiting_team, id_home_team, id_competition, id_instance
 insert into matches (id_visiting_team, id_home_team, id_competition, id_instance, match_date) values (1, 2, 4, 9, (select curdate()));	
 
 -- TEAM_COMPETITIONS
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (1, 1, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (1, 2, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (1, 3, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (1, 4, 10, 10, 10, 10, 10);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (1, 1, 10, 10, 10, 10, 10, 1);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (1, 2, 10, 10, 10, 10, 10, 1);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (1, 3, 10, 10, 10, 10, 10, 2);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (1, 4, 10, 10, 10, 10, 10, 2);
 
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (2, 1, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (2, 2, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (2, 4, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (2, 3, 10, 10, 10, 10, 10);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (2, 1, 10, 10, 10, 10, 10, null);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (2, 2, 10, 10, 10, 10, 10, null);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (2, 4, 10, 10, 10, 10, 10, null);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (2, 3, 10, 10, 10, 10, 10, null);
 
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (3, 1, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (3, 2, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (3, 3, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (3, 4, 10, 10, 10, 10, 10);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (3, 1, 10, 10, 10, 10, 10, 1);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (3, 2, 10, 10, 10, 10, 10, 1);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (3, 3, 10, 10, 10, 10, 10, 2);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (3, 4, 10, 10, 10, 10, 10, 2);
 
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (4, 1, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (4, 2, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (4, 3, 10, 10, 10, 10, 10);
-insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance) values (4, 4, 10, 10, 10, 10, 10);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (4, 1, 10, 10, 10, 10, 10, null);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (4, 2, 10, 10, 10, 10, 10, null);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (4, 3, 10, 10, 10, 10, 10, null);
+insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (4, 4, 10, 10, 10, 10, 10, null);
