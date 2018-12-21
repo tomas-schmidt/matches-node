@@ -87,6 +87,34 @@ insert into teams (team_name, team_logo) values ('River', 'https://cdn.bleacherr
 insert into teams (team_name, team_logo) values ('Boca', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 insert into teams (team_name, team_logo) values ('Racing', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 insert into teams (team_name, team_logo) values ('Independiente', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team5', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team6', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team7', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team8', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team9', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team10', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team11', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team12', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team13', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team14', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team15', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team16', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team17', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team18', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team19', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team20', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team21', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team22', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team23', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team24', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team25', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team26', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team27', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team28', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team29', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team30', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team31', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
+insert into teams (team_name, team_logo) values ('Team32', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 
 -- COMPETITIONS
 insert into competitions (competition_name, is_local, has_brackets, has_positions_table, has_groups) values ('Copa Libertadores', false, true, false, true);
@@ -139,6 +167,14 @@ insert into instances (instance_name, instance_detail) values ('Fecha', '27');
 insert into instances (instance_name, instance_detail) values ('Fecha', '28');
 insert into instances (instance_name, instance_detail) values ('Fecha', '29');
 insert into instances (instance_name, instance_detail) values ('Fecha', '30');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'A');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'B');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'C');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'D');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'E');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'F');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'G');
+insert into instances (instance_name, instance_detail) values ('Grupos', 'H');
 
 -- MATCHES
 insert into matches (id_visiting_team, id_home_team, id_competition, id_instance, match_date) values (1, 2, 2, 33, '2017-06-30 17:30:00');
@@ -173,3 +209,52 @@ insert into team_competitions (id_competition, id_team, goals, goals_recieved, m
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (4, 2, 10, 10, 10, 10, 10, null);
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (4, 3, 10, 10, 10, 10, 10, null);
 insert into team_competitions (id_competition, id_team, goals, goals_recieved, matches_played, points, id_instance, bracket) values (4, 4, 10, 10, 10, 10, 10, null);
+
+-- POSITIONS_TABLE
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (2, 1, 10, 10, 10, 10, null);
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (2, 2, 10, 10, 10, 10, null);
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (2, 3, 10, 10, 10, 10, null);
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (2, 4, 10, 10, 10, 10, null);
+
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (1, 1, 10, 10, 10, 10, 'A');
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (1, 2, 10, 10, 10, 10, 'B');
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (1, 3, 10, 10, 10, 10, 'C');
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (1, 4, 10, 10, 10, 10, 'D');
+
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (3, 1, 10, 10, 10, 10, 'A');
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (3, 2, 10, 10, 10, 10, 'B');
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (3, 3, 10, 10, 10, 10, 'C');
+insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, group) values (3, 4, 10, 10, 10, 10, 'D');
+
+-- BRACKETS
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 1, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 2, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 3, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 4, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 5, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 6, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 7, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 8, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 9, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 10, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 11, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 12, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 13, 1);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 14, 1);
+
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 1, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 2, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 3, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 4, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 5, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 6, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 7, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 8, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 9, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 10, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 11, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 12, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 13, 2);
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 14, 2);
+
+insert into brackets (id_competition, id_team_1, id_team_2, id_instance, bracket) values (1, 1, 2, 15, null);
