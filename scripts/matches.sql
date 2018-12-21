@@ -13,7 +13,9 @@ create table competitions(
 	id_competition int primary key auto_increment,
 	competition_name varchar(100),
 	is_local boolean,
-	has_brackets boolean
+	has_brackets boolean,
+	has_positions_table boolean,
+	has_groups boolean
 );
 
 create table instances (
@@ -52,6 +54,32 @@ create table matches (
 	foreign key (id_competition) references competitions(id_competition)
 );
 
+create table positions_table (
+	id_competition int,
+	id_team int,
+	goals int,
+	goals_recieved int,
+	matches_played int,
+	points int,
+	group char,
+	foreign key (id_team) references teams(id_team),
+	foreign key (id_competition) references competitions(id_competition),
+	primary key (id_competition, id_team)
+);
+
+create table brackets (
+	id_competition int,
+	id_team_1 int,
+	id_team_2 int,
+	id_instance int,
+	bracket int, -- 1 or 2
+	foreign key (id_instance) references instances(id_instance),
+	foreign key (id_team_1) references teams(id_team),
+	foreign key (id_team_2) references teams(id_team),
+	foreign key (id_competition) references competitions(id_competition),
+	primary key (id_competition, id_instance)
+);
+
 /******************************************************** TESTING INSERTS ********************************************************************/
 
 -- TEAMS
@@ -61,20 +89,12 @@ insert into teams (team_name, team_logo) values ('Racing', 'https://cdn.bleacher
 insert into teams (team_name, team_logo) values ('Independiente', 'https://cdn.bleacherreport.net/images/team_logos/328x328/portugal_national_football.png');
 
 -- COMPETITIONS
-insert into competitions (competition_name, is_local, has_brackets) values ('Copa Libertadores', false, true);
-insert into competitions (competition_name, is_local, has_brackets) values ('Superliga', true, false);
-insert into competitions (competition_name, is_local, has_brackets) values ('Copa Sudamericana', false, true);
-insert into competitions (competition_name, is_local, has_brackets) values ('Copa Argentina', true, true);
+insert into competitions (competition_name, is_local, has_brackets, has_positions_table, has_groups) values ('Copa Libertadores', false, true, false, true);
+insert into competitions (competition_name, is_local, has_brackets, has_positions_table, has_groups) values ('Superliga', true, false, true, false);
+insert into competitions (competition_name, is_local, has_brackets, has_positions_table, has_groups) values ('Copa Sudamericana', false, true, false, true);
+insert into competitions (competition_name, is_local, has_brackets, has_positions_table, has_groups) values ('Copa Argentina', true, true, false, false);
 
 -- INSTANCES
-insert into instances (instance_name, instance_detail) values ('Grupos', 'A');
-insert into instances (instance_name, instance_detail) values ('Grupos', 'B');
-insert into instances (instance_name, instance_detail) values ('Grupos', 'C');
-insert into instances (instance_name, instance_detail) values ('Grupos', 'D');
-insert into instances (instance_name, instance_detail) values ('Grupos', 'E');
-insert into instances (instance_name, instance_detail) values ('Grupos', 'F');
-insert into instances (instance_name, instance_detail) values ('Grupos', 'G');
-insert into instances (instance_name, instance_detail) values ('Grupos', 'H');
 insert into instances (instance_name, instance_detail) values ('8vos', '1');
 insert into instances (instance_name, instance_detail) values ('8vos', '2');
 insert into instances (instance_name, instance_detail) values ('8vos', '3');
