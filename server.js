@@ -26,6 +26,14 @@ app.get('/competitions', (req, res) => {
   database.query(queries.competitions).then(rows => { res.send(rows) });
 });
 
+app.get('/groups/:idComp', (req, res) => {
+  database.query(`${queries.groups}${req.params.idComp}`).then(rows => { res.send(rows) });
+});
+
+app.get('/brackets/:idComp', (req, res) => {
+  database.query(`${queries.brackets}${req.params.idComp}`).then(rows => { res.send(rows) });
+});
+
 app.get('/competition/:idComp', (req, res) => {
   let competition = {};
   async.parallel([
