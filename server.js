@@ -31,15 +31,12 @@ app.get('/groups/:idComp', (req, res) => {
 });
 
 app.get('/brackets/:idComp', (req, res) => {
-  database.query(`${queries.brackets}${req.params.idComp}`).then(rows => { res.send(rows) });
-});
-
-app.get('/competition/:idComp', (req, res) => {
-  let competition = {};
+  let brackets = {};
   async.parallel([
-    pd => { database.query(`${queries.base}${req.params.idComp}`).then(rows => { competition.matches = rows; pd(); });},
-    pd => { database.query(`${queries.table}${req.params.idComp}`).then(rows => { competition.table = rows; pd(); });}
-  ], () => { res.send(competition); });
+    pd => { database.query(`${queries.bracketOne}${req.params.idComp}`).then(rows => { brackets.one = rows; pd(); });},
+    pd => { database.query(`${queries.bracketTwo}${req.params.idComp}`).then(rows => { brackets.two = rows; pd(); });},
+    pd => { database.query(`${queries.bracketsFinal}${req.params.idComp}`).then(rows => { brackets.final = rows; pd(); });}
+  ], () => { res.send(brackets); });
 });
 
 app.listen(port, () => {

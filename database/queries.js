@@ -4,7 +4,9 @@ const queries = {
   competitions: "select id_competition as 'key', competition_name as 'name', is_local as 'isLocal', has_brackets as 'hasBrackets', has_positions_table as 'hasPositionsTable', has_groups as 'hasGroups' from competitions",
   table: "select tc.*, t.team_name from positions_table tc join teams t on (t.id_team = tc.id_team) where team_group is null and id_competition =",
   groups: "select tc.*, t.team_name from positions_table tc join teams t on (t.id_team = tc.id_team) where team_group is not null and id_competition =",
-  brackets: "select t1.team_name as 'team1', t1.team_logo as 'team1Logo', t2.team_name as 'team2', t2.team_logo as 'team2Logo', i.instance_name as 'instance', i.instance_detail as 'instanceDetail' from brackets b join teams t1 on (t1.id_team = b.id_team_1) join teams t2 on (t2.id_team = b.id_team_2) join instances i on (i.id_instance = b.id_instance) where b.id_competition ="
+  bracketOne: "select t1.team_name as 'team1', t1.team_logo as 'team1Logo', t2.team_name as 'team2', t2.team_logo as 'team2Logo', i.instance_name as 'instance', i.instance_detail as 'instanceDetail' from brackets b join teams t1 on (t1.id_team = b.id_team_1) join teams t2 on (t2.id_team = b.id_team_2) join instances i on (i.id_instance = b.id_instance) where b.bracket = 1 and b.id_competition =",
+  bracketTwo: "select t1.team_name as 'team1', t1.team_logo as 'team1Logo', t2.team_name as 'team2', t2.team_logo as 'team2Logo', i.instance_name as 'instance', i.instance_detail as 'instanceDetail' from brackets b join teams t1 on (t1.id_team = b.id_team_1) join teams t2 on (t2.id_team = b.id_team_2) join instances i on (i.id_instance = b.id_instance) where b.bracket = 2 and b.id_competition =",
+  bracketsFinal: "select t1.team_name as 'team1', t1.team_logo as 'team1Logo', t2.team_name as 'team2', t2.team_logo as 'team2Logo', i.instance_name as 'instance', i.instance_detail as 'instanceDetail' from brackets b join teams t1 on (t1.id_team = b.id_team_1) join teams t2 on (t2.id_team = b.id_team_2) join instances i on (i.id_instance = b.id_instance) where b.bracket = 3 and b.id_competition ="
 }
 
 module.exports = queries;
