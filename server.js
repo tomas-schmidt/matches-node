@@ -27,7 +27,17 @@ app.get('/competitions', (req, res) => {
 });
 
 app.get('/groups/:idComp', (req, res) => {
-  database.query(`${queries.groups}${req.params.idComp}`).then(rows => { res.send(rows) });
+  let groupsRes = {};
+  async.parallel([
+    pd => { database.query(`${queries.groups}${req.params.idComp}`).then(rows => { groupsRes.groups = rows; pd(); });},
+    pd => { database.query(`${queries.groupsTeams}${req.params.idComp}`).then(rows => { groupsRes.teams = rows; pd(); });}
+  ], () => {
+    let groups = {};
+    for (g of groupsRes.groups) {
+      groups[g.group] = groupsRes.teams.filter(team => team.team_group === g.group);
+    }
+    res.send(groups);
+  });
 });
 
 app.get('/brackets/:idComp', (req, res) => {

@@ -123,11 +123,6 @@ insert into positions_table (id_competition, id_team, goals, goals_recieved, mat
 insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, team_group) values (1, 3, 10, 10, 10, 10, 'C');
 insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, team_group) values (1, 4, 10, 10, 10, 10, 'D');
 
-insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, team_group) values (3, 1, 10, 10, 10, 10, 'A');
-insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, team_group) values (3, 2, 10, 10, 10, 10, 'B');
-insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, team_group) values (3, 3, 10, 10, 10, 10, 'C');
-insert into positions_table (id_competition, id_team, goals, goals_recieved, matches_played, points, team_group) values (3, 4, 10, 10, 10, 10, 'D');
-
 -- BRACKETS
 insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 1, 1, 1, 2);
 insert into brackets (id_competition, id_instance, bracket, id_team_1, id_team_2) values (1, 2, 1, 2, 1);
